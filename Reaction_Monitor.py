@@ -29,6 +29,7 @@ for i in range(max_targets):
 def assign_target():
     #delay for a random amount of time before choosing target
     delay = random.randrange(min_delay*1000, max_delay*1000, 1)/1000
+    print("Wait for target...")
     time.sleep(delay)
     #randomly assign target from list of possible targets
     new_target = random.choice(target_list)
@@ -56,9 +57,9 @@ try:
     #main loop
     while True:
         target = assign_target()
-        print(target)
+        print("Target : " + str(target))
         reaction = calc_reaction()
-        print("%.3f" % (reaction))
+        print("Reaction Time : %.3f \n" % (reaction))
         target = 0
 except KeyboardInterrupt:
     pass
